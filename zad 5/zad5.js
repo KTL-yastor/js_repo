@@ -1,13 +1,14 @@
 function fibbonaci(n){
-    return Array.from({length: n}, (_, i) => i).reduce((acc, curr) => {
-        if (curr === 0 || curr === 1){
-            acc.push(curr);
+
+    let array = [];
+    for (let i = 0; i < n; i++){
+        if (i === 0 || i === 1){
+            array.push(i);
         } else {
-            acc.push(acc[curr-1] + acc[curr-2]);
+            array.push(array[i-1] + array[i-2]);
         }
-        return acc;
     }
-    , []);
+    return array;
 }
 
 console.log(fibbonaci(9));
